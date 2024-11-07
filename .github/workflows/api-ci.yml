@@ -1,0 +1,31 @@
+name: web CI
+
+on:
+  push:
+    branches:
+      - main
+      - stage
+      - dev
+
+  pull_request:
+    branches:
+      - main
+      - stage
+      - dev
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: install dependencies
+        run: npm ci
+
+      - name: run tests
+        run: npm run test
