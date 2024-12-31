@@ -1,29 +1,20 @@
 import { AppShell as MantineAppShell } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
+import { appShellStyles, headerStyles, navStyles } from './AppShell.styles';
 import PropTypes from 'prop-types';
 import Header from './Header';
 import Nav from './Nav';
-import { getAppShellStyles } from './AppShell.styles';
 
 export default function AppShell({ children }) {
   const isMobile = useMediaQuery('(max-width: 920px)');
-  const styles = getAppShellStyles(isMobile);
 
   return (
     <MantineAppShell
-      header={{
-        flex: 0,
-        height: 60,
-      }}
-      navbar={{
-        flex: 1,
-        width: 300,
-        breakpoint: 920,
-        collapsed: { mobile: isMobile },
-      }}
+      header={headerStyles(isMobile)}
+      navbar={navStyles(isMobile)}
       padding='md'
       layout='default'
-      styles={styles}
+      styles={appShellStyles(isMobile)}
     >
       <MantineAppShell.Header withBorder>
         <Header />

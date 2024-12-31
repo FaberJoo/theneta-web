@@ -1,4 +1,4 @@
-export const getHeaderStyles = (isMobile) => ({
+export const appShellStyles = (isMobile) => ({
   root: {
     display: 'flex',
     minHeight: '100vh',
@@ -11,4 +11,16 @@ export const getHeaderStyles = (isMobile) => ({
     marginBottom: isMobile ? '60px' : 0,
     paddingLeft: isMobile ? 'md' : 0,
   },
+});
+
+export const headerStyles = () => ({
+  flex: 0,
+  height: 60,
+});
+
+export const navStyles = (isMobile) => ({
+  flex: 1,
+  width: 300,
+  breakpoint: 920,
+  collapsed: { mobile: isMobile },
 });
