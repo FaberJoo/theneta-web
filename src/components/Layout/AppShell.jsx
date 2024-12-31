@@ -3,9 +3,11 @@ import { useMediaQuery } from '@mantine/hooks';
 import PropTypes from 'prop-types';
 import Header from './Header';
 import Nav from './Nav';
+import { getAppShellStyles } from './AppShell.styles';
 
 export default function AppShell({ children }) {
   const isMobile = useMediaQuery('(max-width: 920px)');
+  const styles = getAppShellStyles(isMobile);
 
   return (
     <MantineAppShell
@@ -21,20 +23,7 @@ export default function AppShell({ children }) {
       }}
       padding='md'
       layout='default'
-      styles={{
-        root: {
-          display: 'flex',
-          minHeight: '100vh',
-          flexDirection: 'column',
-        },
-        main: {
-          flex: 1,
-          marginLeft: isMobile ? 0 : '50px',
-          marginTop: '60px',
-          marginBottom: isMobile ? '60px' : 0,
-          paddingLeft: isMobile ? 'md' : 0,
-        },
-      }}
+      styles={styles}
     >
       <MantineAppShell.Header withBorder>
         <Header />

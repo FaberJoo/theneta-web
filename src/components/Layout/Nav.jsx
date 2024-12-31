@@ -8,32 +8,15 @@ import {
   IconSquareRoundedPlus,
 } from '@tabler/icons-react';
 import { useMediaQuery } from '@mantine/hooks';
+import { getNavStyles } from './Nav.styles';
 
 export default function Nav() {
   const isMobile = useMediaQuery('(max-width: 920px)');
+  const styles = getNavStyles(isMobile);
   const iconSize = isMobile ? 35 : 40;
 
   return (
-    <AppShell.Navbar
-      p='md'
-      style={{
-        position: isMobile ? 'fixed' : 'sticky',
-        bottom: isMobile ? 0 : 'auto',
-        width: isMobile ? '100%' : '60px',
-        height: isMobile ? '60px' : 'calc(100vh - 60px)', // 헤더 높이만큼 빼기
-        display: 'flex',
-        flexDirection: isMobile ? 'row' : 'column',
-        gap: isMobile ? '0' : '20px',
-        alignItems: 'center',
-        justifyContent: isMobile ? 'space-around' : 'flex-start',
-        backgroundColor: 'white',
-        borderTop: isMobile ? '1px solid #eee' : 'none',
-        borderRight: isMobile ? '1px solid #eee' : 'none',
-        marginTop: isMobile ? 'auto' : 15,
-        zIndex: 1000,
-        textDecoration: 'none',
-      }}
-    >
+    <AppShell.Navbar p='md' style={styles}>
       <NavLink
         component={Link}
         to='/'
