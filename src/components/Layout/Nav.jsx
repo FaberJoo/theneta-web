@@ -2,7 +2,6 @@ import { AppShell, NavLink } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import {
   IconHome,
-  IconBell,
   IconUser,
   IconSend,
   IconSearch,
