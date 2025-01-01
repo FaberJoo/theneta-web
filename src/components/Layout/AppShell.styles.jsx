@@ -6,6 +6,9 @@ export const appShellStyles = (isMobile) => ({
   },
   main: {
     flex: 1,
+    position: isMobile ? 'relative' : 'fixed',
+    top: isMobile ? 'auto' : '60px',
+    left: isMobile ? 'auto' : '60px',
     marginLeft: isMobile ? 0 : '50px',
     marginTop: '60px',
     marginBottom: isMobile ? '60px' : 0,
