@@ -1,5 +1,5 @@
 export const getNavStyles = (isMobile) => ({
-  position: isMobile ? 'fixed' : 'fixed',
+  position: 'fixed',
   bottom: isMobile ? 0 : 'auto',
   top: isMobile ? 'auto' : '60px',
   left: isMobile ? 0 : 0,
