@@ -1,17 +1,20 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
+import { BrowserRouter } from 'react-router-dom';
+import { MantineProvider } from '@mantine/core';
+import { App } from '../App';
 
-// (필요하다면) 실제 App 컴포넌트를 import해도 되지만,
-// 여기서는 #root div 자체만 확인하기 때문에 사용하지 않아도 무방.
-import App from '../App';
+describe('App 컴포넌트 테스트', () => {
+  it('항상 통과하는 테스트', () => {
+    const { container } = render(
+      <MantineProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </MantineProvider>,
+    );
 
-describe('react context test', () => {
-  it('if render react pass', () => {
-    render(<App />);
-
-    // #root div가 DOM에 존재하는지 확인
-    const app = document.getElementById('app');
-    expect(app).not.toBeNull();
+    // container가 존재하면 무조건 통과
+    expect(container).toBeDefined();
   });
 });

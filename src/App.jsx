@@ -1,23 +1,19 @@
-import thenetaLogo from './assets/theneta.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import AppShell from './components/Layout/AppShell';
+import { Landing } from './routes/landing';
+import { Explore } from './routes/explore';
+import { Profile } from './routes/profile';
+import { Notifications } from './routes/notifications';
 
-function App() {
+export function App() {
   return (
-    <div id='app'>
-      <div>
-        <a href='https://theneta.site' target='_blank'>
-          <img src={thenetaLogo} className='logo' alt='Theneta logo' />
-        </a>
-      </div>
-      <h1>Theneta</h1>
-      <div className='card'>
-        <p>Share your routine with others!</p>
-        <p className='read-the-docs'>
-          Inspire each other and lead a successful life!
-        </p>
-      </div>
-    </div>
+    <AppShell>
+      <Routes>
+        <Route path='/' element={<Landing />} />
+        <Route path='/explore' element={<Explore />} />
+        <Route path='/notifications' element={<Notifications />} />
+        <Route path='/profile' element={<Profile />} />
+      </Routes>
+    </AppShell>
   );
 }
-
-export default App;
