@@ -2,9 +2,10 @@ import { ActionIcon, AppShellHeader, Group } from '@mantine/core';
 import thenetaLogo from '../../assets/theneta.svg';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconBell, IconMenu2 } from '@tabler/icons-react';
+import PropTypes from 'prop-types';
 import { headerStyles, menuStyles, iconStyle } from './Header.styles';
 
-export default function Header() {
+export default function Header({ onOpenDrawer }) {
   const isMobile = useMediaQuery('(max-width: 920px)');
 
   return (
@@ -32,6 +33,7 @@ export default function Header() {
           size={40}
           aria-label='menu'
           style={iconStyle}
+          onClick={onOpenDrawer}
         >
           <IconMenu2 size={36} />
         </ActionIcon>
@@ -39,3 +41,7 @@ export default function Header() {
     </AppShellHeader>
   );
 }
+
+Header.propTypes = {
+  onOpenDrawer: PropTypes.func.isRequired,
+};
