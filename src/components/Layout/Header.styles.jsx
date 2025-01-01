@@ -20,3 +20,9 @@ export const menuStyles = () => ({
   alignItems: 'center',
   gap: '10px',
 });
+
+export const iconStyle = {
+  backgroundColor: 'white',
+  border: 'none',
+  cursor: 'pointer',
+};

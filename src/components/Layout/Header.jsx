@@ -2,14 +2,10 @@ import { ActionIcon, AppShellHeader, Group } from '@mantine/core';
 import thenetaLogo from '../../assets/theneta.svg';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconBell, IconMenu2 } from '@tabler/icons-react';
-import { headerStyles, menuStyles } from './Header.styles';
+import { headerStyles, menuStyles, iconStyle } from './Header.styles';
 
 export default function Header() {
   const isMobile = useMediaQuery('(max-width: 920px)');
-  const iconStyle = {
-    backgroundColor: 'white',
-    border: 'none',
-  };
 
   return (
     <AppShellHeader style={headerStyles(isMobile)}>
