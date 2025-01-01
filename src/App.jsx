@@ -3,7 +3,7 @@ import AppShell from './components/Layout/AppShell';
 import { Landing } from './routes/landing';
 import { Explore } from './routes/explore';
 import { Profile } from './routes/profile';
-import { Notifications } from './routes/notifications';
+import { Message } from './routes/message';
 
 export function App() {
   return (
@@ -11,7 +11,7 @@ export function App() {
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path='/explore' element={<Explore />} />
-        <Route path='/notifications' element={<Notifications />} />
+        <Route path='/message' element={<Message />} />
         <Route path='/profile' element={<Profile />} />
       </Routes>
     </AppShell>

@@ -35,7 +35,7 @@ export default function Nav() {
       />
       <NavLink
         component={Link}
-        to='/notifications'
+        to='/message'
         leftSection={<IconSend size={iconSize} color='black' />}
       />
       <NavLink
